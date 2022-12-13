@@ -1,25 +1,34 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Canvas } from "@react-three/fiber";
+import { ACESFilmicToneMapping, sRGBEncoding } from "three";
+import "./App.css";
+import Experience from "./components/Experience";
+import Interface from "./components/interface/Interface";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Canvas
+        style={{
+          width: "100vw",
+          height: "100vh",
+          background: "#141414",
+        }}
+        camera={{
+          fov: 75,
+          near: 0.01,
+          far: 2000,
+          position: [0, 0, 300],
+        }}
+        gl={{
+          outputEncoding: sRGBEncoding,
+          toneMapping: ACESFilmicToneMapping,
+          toneMappingExposure: 1.25,
+        }}
+      >
+        <Experience />
+      </Canvas>
+      <Interface />
+    </>
   );
 }
 
