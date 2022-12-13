@@ -3,6 +3,9 @@ import create from "zustand";
 export const MaterialList = {
   physicalMaterial: 0,
   physicalMaterRed: 1,
+  goldMetalMaterial: 2,
+  glassMaterial: 3,
+  woodFloorMaterial: 4,
 } as const;
 
 export type MaterialListType = typeof MaterialList[keyof typeof MaterialList];

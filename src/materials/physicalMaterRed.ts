@@ -10,9 +10,9 @@ texture.repeat.y = 6;
 const physicalMaterialProperty = {
   name: "physicalMaterRed",
   clearcoat: 1.0,
-  clearcoatRoughness: 0.1,
-  metalness: 0.9,
-  roughness: 0.5,
+  clearcoatRoughness: 0,
+  metalness: 1.0,
+  roughness: 1.0,
   color: "#ff0000",
   normalMap: texture,
   normalScale: new THREE.Vector2(0.15, 0.15),

@@ -12,10 +12,12 @@ const Interface = () => {
   const materialList = useMaterialList();
   const { setMaterial } = useCurrntMaterial();
   const { isNight, setIsNight } = useCurrentBackGround((state) => state);
+
   const handleMaterial = (e: ChangeEvent<HTMLSelectElement>) => {
     const value = Number(e.target.value) as MaterialListType;
     setMaterial(value);
   };
+
   const handleBg = () => {
     setIsNight(!isNight);
   };
@@ -67,7 +69,8 @@ const selectorStyle = {
   borderRadius: 0,
   color: "#666",
   fontWeight: 800,
-  textAlign: "center",
+  textAlign: "left",
+  p: "5px",
 };
 
 const iconStyle = {

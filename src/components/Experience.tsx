@@ -7,6 +7,8 @@ import useCurrentBackGround from "../stores/useCurrentBackGround";
 
 const sphereGeometry = new THREE.SphereGeometry(100, 64, 64);
 
+// const testMaterial = new THREE.MeshStandardMaterial({});
+
 const Experience = () => {
   const materialList = useMaterialList();
   const { material } = useCurrntMaterial((state) => state);
@@ -16,13 +18,13 @@ const Experience = () => {
   return (
     <>
       <OrbitControls makeDefault autoRotate />
-      <pointLight />
       {isNight ? (
-        <Environment preset="sunset" />
+        <Environment preset="apartment" />
       ) : (
         <Environment files="/sky.hdr" background />
       )}
       <mesh geometry={sphereGeometry} material={currentMaterial} />
+      {/* <mesh geometry={sphereGeometry} material={testMaterial} /> */}
     </>
   );
 };

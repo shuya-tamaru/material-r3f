@@ -6,7 +6,7 @@ interface BackGroundType {
 }
 
 export default create<BackGroundType>((set) => ({
-  isNight: true,
+  isNight: false,
   setIsNight: (flg: boolean) => {
     set(() => {
       return { isNight: flg };
